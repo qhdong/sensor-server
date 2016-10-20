@@ -1,0 +1,30 @@
+{
+  "name": "sensor-server",
+  "version": "1.0.0",
+  "description": "提供PIN码的微服务",
+  "main": "index.js",
+  "author": "Dong Qihong <dongqihong@vip.qq.com>",
+  "private": true,
+  "scripts": {
+    "initdb": "node util/initdb.js",
+    "start": "node index.js",
+    "test": "mocha -R spec **/*.spec.js",
+    "debug": "node-debug index.js",
+    "lint": "eslint ."
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "rules": {
+      "semi": 2
+    }
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10",
+    "morgan": "^1.7.0"
+  }
+}
