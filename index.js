@@ -1,4 +1,4 @@
-const repository = require('./Repository/repository');
+const repository = require('./repository/repository');
 const server = require('./server/server');
 const config = require('./config/config');
 
