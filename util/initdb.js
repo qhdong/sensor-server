@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const config = require('../config/config');
 
-var N = 50;
+var N = 5;
 var pinArray = pin.getValidPins(N);
 
 MongoClient.connect(config.db, function (err, db) {

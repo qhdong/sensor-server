@@ -15,6 +15,7 @@ module.exports.start = (options) => {
     require('../api/pin')(app, options);
 
     var server = app.listen(options.port, () => {
+      require('../api/websocket')(server, options);
       resolve(server);
     });
   });
