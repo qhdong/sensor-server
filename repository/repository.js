@@ -32,6 +32,20 @@ class Repository {
     });
   }
 
+  getStatus() {
+    return new Promise((resolve, reject) => {
+      var pin;
+      MongoClient.connect(this.url, function (err, db) {
+        assert.equal(null, err);
+        db.collection('status').find({}, {'_id': 0}).toArray(function (err, doc) {
+          assert.equal(null, err);
+          db.close();
+          resolve(doc);
+        });
+      });
+    });
+  }
+
   getPins() {
     return new Promise((resolve, reject) => {
       var pin;

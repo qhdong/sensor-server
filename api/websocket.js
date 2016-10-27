@@ -28,7 +28,7 @@ module.exports = (server, options) => {
 
     socket.on('log-complete', (data) => {
       logger.info(`[User: ${data.username}, sampleID: ${data.sampleID}]: Log completed. `);
-      options.repository.insert('stat', data);
+      options.repository.insert('status', data);
     });
 
   });

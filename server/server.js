@@ -14,6 +14,7 @@ module.exports.start = (options) => {
 
     // Add the APIs
     require('../api/pin')(app, options);
+    require('../api/status')(app, options);
 
     var server = app.listen(options.port, () => {
       require('../api/websocket')(server, options);
