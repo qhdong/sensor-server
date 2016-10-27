@@ -3,7 +3,11 @@
 module.exports = (app, options) => {
   app.get('/status', (req, res, next) => {
     options.repository.getStatus().then((status) => {
-      res.json(status);
+      if (req.query.callback) {
+        res.jsonp(status);
+      } else {
+        res.json(status);
+      }
     }).catch(next);
   });
 };

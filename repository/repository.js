@@ -47,11 +47,6 @@ class Repository {
             resolve(result);
           }
         );
-        // db.collection('status').find({}, {'_id': 0}).toArray(function (err, doc) {
-        //   assert.equal(null, err);
-        //   db.close();
-        //   resolve(doc);
-        // });
       });
     });
   }
