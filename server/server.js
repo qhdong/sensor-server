@@ -1,7 +1,7 @@
 // server.js
 
 const express = require('express');
-const morgan = require('morgan');
+const log4js = require('../util/log');
 
 module.exports.start = (options) => {
   return new Promise((resolve, reject) => {
@@ -9,7 +9,8 @@ module.exports.start = (options) => {
 
     // Create the app
     var app = express();
-    app.use(morgan('dev'));
+    log4js.configure();
+    app.use(log4js.useLog());
 
     // Add the APIs
     require('../api/pin')(app, options);
