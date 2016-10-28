@@ -34,10 +34,23 @@ class Repository {
 
   getStatus() {
     return new Promise((resolve, reject) => {
+      this.groupBy('status', 'UAParser.browser').then((browser) => {
+        this.groupBy('status', 'UAParser.os').then((os) => {
+          resolve({
+            'browser': browser,
+            'os': os
+          });
+        });
+      });
+    });
+  }
+
+  groupBy(col, field) {
+    return new Promise((resolve, reject) => {
       MongoClient.connect(this.url, function (err, db) {
         assert.equal(null, err);
-        db.collection('status').group(
-          ['username'],
+        db.collection(col).group(
+          [field],
           {},
           {'count': 0},
           "function (curr, result) {result.count++}",
