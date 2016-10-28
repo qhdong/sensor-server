@@ -27,7 +27,7 @@ module.exports = (server, options) => {
     });
 
     socket.on('log-complete', (data) => {
-      logger.info(`[User: ${data.username}, sampleID: ${data.sampleID}]: Log completed. `);
+      logger.info(`Log completed！[User: ${data.username}, sampleID: ${data.sampleID}, UAParser: ${data.UAParser}] `);
       options.repository.insert('status', data);
     });
 
