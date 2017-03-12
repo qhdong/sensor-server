@@ -4,10 +4,12 @@ const assert = require('assert');
 const config = require('../config/config');
 
 var N = 50;
-if (process.argv.length == 3) {
+var K = 4;
+if (process.argv.length == 4) {
   N = parseInt(process.argv[2]);
+  K = parseInt(process.argv[3]);
 }
-var pinArray = pin.getValidPins(N);
+var pinArray = pin.getValidPins(N, K);
 
 MongoClient.connect(config.db, function (err, db) {
   assert.equal(null, err);
