@@ -12,7 +12,7 @@ module.exports = (server, options) => {
 
     socket.on('sensor', (data) => {
       options.repository.insert('sensor', data);
-      logger.info(`get sensor data: ${data}`);
+      logger.debug(data);
     });
 
     socket.on('rollback', (data) => {
