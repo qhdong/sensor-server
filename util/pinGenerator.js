@@ -1,8 +1,3 @@
-// 使用方式：
-// npm run initdb -- N K
-// N: 多少个PIN码
-// K: 每个PIN码多少位
-// 例如： npm run initdb -- 50 4
 
 
 /**

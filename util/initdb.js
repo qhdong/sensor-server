@@ -1,3 +1,10 @@
+// 初始化并生成按照指定的方式生成PIN码，存储到数据库
+// 使用方式：
+// npm run initdb -- N K
+// N: 多少个PIN码
+// K: 每个PIN码多少位
+// 例如： npm run initdb -- 50 4
+
 const pin = require('./pinGenerator');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
